@@ -18,9 +18,10 @@
 
     <nav class="header-nav">
         <ul>
-            <li><a href="#!">О компании</a></li>
-            <li><a href="#!">БЛОГ</a></li>
-            <li><a href="#!">КОНТАКТЫ</a></li>
+            <li><a href="#catalog">Товары</a></li>
+            <li><a href="#about">О компании</a></li>
+            <!-- <li><a href="#!">БЛОГ</a></li> -->
+            <li><a href="#contacts">КОНТАКТЫ</a></li>
         </ul>
     </nav>
 
@@ -51,7 +52,7 @@
     </div>
 
     <button class="button header-callback">
-        <a class="callback__link" href="#!">Заказать звонок</a>
+        <a class="callback__link" href="#!">Заказать</a>
     </button>
 
     <button class="mobile-nav-btn">
@@ -61,7 +62,7 @@
 
             <div class="header-bot">
     <div class="logo">
-        <img src="./img/артекс без фона (1).png" alt="">
+        <img src="./img/logo.png" alt="">
         <p class="logo-label">
             Тут должен быть слоган вашей компании
         </p>
@@ -154,13 +155,17 @@
         </div>
     </div>
 </section>
-		<section class="catalog">
+
+		<section class="catalog" id="catalog">
     <div class="container">
+
+        <h2>Товары</h2>
+
         <div class="catalog-wrapper">
 
             <nav class="catalog-nav">
                 <ul class="catalog-list">
-                    <li class="catalog-item" data-categories="item-1">Категория 1</li>
+                    <li class="catalog-item catalog-item--active" data-categories="item-1">Категория 1</li>
                     <li class="catalog-item" data-categories="item-2">Категория 2</li>
                     <li class="catalog-item" data-categories="item-3">Категория 3</li>
                     <li class="catalog-item" data-categories="item-4">Категория 4</li>
@@ -170,7 +175,6 @@
             <div class="catalog-products">
                 <div id="item-1" class="catalog-product" data-product>
                     <div class="catalog-content">
-                        <h3>Товары с 1 категории</h3>
 
 
                         <div class="catalog-content__blocks">
@@ -254,7 +258,6 @@
                 </div>
                 <div id="item-2" class="catalog-product none" data-product>
                     <div class="catalog-content">
-                        <h3>Товары с 2 категории</h3>
                         <div class="catalog-content__blocks">
                             <div class="catalog-slider">
                                 <div class="swiper catalog-swiper">
@@ -304,7 +307,6 @@
                 </div>
                 <div id="item-3" class="catalog-product none" data-product>
                     <div class="catalog-content">
-                        <h3>Товары с 3 категории</h3>
                         <div class="catalog-content__blocks">
                             <div class="catalog-slider">
                                 <div class="swiper catalog-swiper">
@@ -353,7 +355,6 @@
                 </div>
                 <div id="item-4" class="catalog-product none" data-product>
                     <div class="catalog-content">
-                        <h3>Товары с 4 категории</h3>
 
                         <div class="catalog-content__blocks">
 
@@ -411,15 +412,107 @@
 
     </div>
 </section>
+
+		<section class="about" id="about">
+    <div class="container">
+        <div class="about-wrapper">
+            <div class="about-content">
+                <h2>О компании Артекс</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim maiores aut tempore, quos
+                    voluptates distinctio explicabo accusantium similique cum hic, quasi facere animi, temporibus dolor
+                    accusamus veritatis deserunt porro!
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim maiores aut tempore, quos
+                    voluptates distinctio explicabo accusantium similique cum hic, quasi facere animi, temporibus dolor
+                    accusamus veritatis deserunt porro!
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+		<section class="contacts" id="contacts">
+    <div class="container">
+
+        <h2>Контакты</h2>
+
+        <div class="contacts__wrapper">
+
+            <div class="contacts__content">
+
+                <ul class="contacts__content-list">
+
+                    <li class="contacts__content-item">
+                        <a class="contacts__content-item" href="tel:+79990008585">+7 (999) 000-85-85</a>
+                    </li>
+                    <li class="contacts__content-item">
+                        <a class="contacts__content-item" href="#!">
+                            Ростовская область, г.Каменск-Шахтинский, ул. Профильная, 33
+                        </a>
+                    </li>
+                    <li class="contacts__content-item">
+                        <a class="contacts__content-item" href="mailto:arteks@mail.ru">arteks@mail.ru</a>
+                    </li>
+
+                </ul>
+
+                <ul class="contacts__content-list">
+
+                    <li class="contacts__content-item">
+                        <p>ИНН: 00000000000</p>
+                    </li>
+                    <li class="contacts__content-item">
+                        <p>ОГРНИП: 00000000000000</p>
+                    </li>
+
+                </ul>
+
+                <ul class="contacts__content-list">
+
+                    <li class="contacts__content-item">
+                        <a target="_blank" class="contacts__content-link" href="#!">
+                            Вопрос-ответ
+                        </a>
+                    </li>
+
+                    <li class="contacts__content-item">
+                        <a target="_blank" class="contacts__content-link" href="#!">
+                            Вакансии
+                        </a>
+                    </li>
+
+                    <li class="contacts__content-item">
+                        <a target="_blank" class="contacts__content-link" href="#!">
+                            Политика конфиденциальности
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+            <div class="contacts-map" id="map"> </div>
+        </div>
+    </div>
+
+</section>
 	</main>
 
 	<footer class="footer">
 	<div class="container">
-		<h2>Footer</h2>
+		<div class="footer__wrappper">
+			<img class="footer-logo" src="./img/logo.png" alt="">
+			<p>© 2024. Артекс. Все права защищены</p>
+		</div>
 	</div>
 </footer>
-
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=a58693e5-1e8e-4308-8b3c-45bf0e2e603e&lang=ru_RU"
+		type="text/javascript"></script>
 	<script src="./js/index.bundle.js"></script>
+
 </body>
 
 </html>
