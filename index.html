@@ -12,43 +12,31 @@
 <body>
 	<header class="header">
     <div class="container">
-        <div class="header__row">
+        <div class="header__wrapper">
 
             <div class="header-top">
 
     <nav class="header-nav">
         <ul>
-            <li><a href="#catalog">Товары</a></li>
-            <li><a href="#about">О компании</a></li>
+            <li><a href="index.html#about">О компании</a></li>
+            <li><a href="index.html#catalog">Товары</a></li>
             <!-- <li><a href="#!">БЛОГ</a></li> -->
-            <li><a href="#contacts">КОНТАКТЫ</a></li>
+            <li><a href="index.html#contacts">КОНТАКТЫ</a></li>
         </ul>
     </nav>
 
     <div class="header-messenger">
-        <p>Задайте вопрос, <br> мы онлайн</p>
-        <ul>
-            <li>
-                <a href="#!">
-                    <img loading="lazy" src="./img/icons/instagram.svg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="#!">
-                    <img loading="lazy" src="./img/icons/telegram.svg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="#!">
-                    <img loading="lazy" src="./img/icons/vk.svg" alt="">
-                </a>
-            </li>
-        </ul>
+        <p>Получите консультацию <br>онлайн</p>
+
+        <a href="https://wtsp.cc/79287700598">
+            <img loading="lazy" src="./img/icons/whatsapp.svg" alt="">
+        </a>
+
     </div>
 
     <div class="phone">
-        <div class="phone__label">Будние дни с 9:00-18:00</div>
-        <a class="phone__tel" href="tel:+7987654-32-10">+7 987 654-32-10</a>
+        <div class="phone__label">Работаем все дни с 9:00-18:00</div>
+        <a class="phone__tel" href="tel:+79287700598">+7 (928) 770-05-98</a>
     </div>
 
     <button class="button header-callback">
@@ -64,7 +52,7 @@
     <div class="logo">
         <img loading="lazy" src="./img/logo.png" alt="">
         <p class="logo-label">
-            Тут должен быть слоган вашей компании
+            Всё начинается с упаковки
         </p>
     </div>
 
@@ -94,7 +82,9 @@
                     <div class="swiper-slide header-slide"
                         style="background: url('./img/header/slider-1.jpg') center/cover no-repeat;">
                         <div class="header-slide__content">
-                            <h1>Гофротара</h1>
+                            <a href="product.html">
+                                <h1>Гофротара</h1>
+                            </a>
                             <p>Изготавливаем гофроупаковку из трехслойного гофрированного картона</p>
                         </div>
                     </div>
@@ -102,8 +92,30 @@
                     <div class="swiper-slide header-slide"
                         style="background: url('./img/header/slider-2.jpg') center/cover no-repeat;">
                         <div class="header-slide__content">
-                            <h1>ПЭТ-тара</h1>
+                            <a href="product.html">
+                                <h1>ПЭТ-тара</h1>
+                            </a>
                             <p>Производим ПЭТ-тару и ПЭТ-бутылки</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide header-slide"
+                        style="background: url('./img/header/slider-3.jpg') center/cover no-repeat;">
+                        <div class="header-slide__content">
+                            <a href="product.html">
+                                <h1>ПНД-бутылка</h1>
+                            </a>
+                            <p>Производим ПНД-бутылку</p>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide header-slide"
+                        style="background: url('./img/header/slider-4.jpg') center/cover no-repeat;">
+                        <div class="header-slide__content">
+                            <a href="product.html">
+                                <h1>Комплектующие товары</h1>
+                            </a>
+                            <p>Ручки, пробки, крышки</p>
                         </div>
                     </div>
 
@@ -152,6 +164,26 @@
 
                 <h3>Название преимущества</h3>
                 <p>Небольшое описание данного преимущества</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+		<section class="about" id="about">
+    <div class="container">
+        <div class="about-wrapper">
+            <div class="about-content">
+                <h2>О компании Артекс</h2>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim maiores aut tempore, quos
+                    voluptates distinctio explicabo accusantium similique cum hic, quasi facere animi, temporibus dolor
+                    accusamus veritatis deserunt porro!
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim maiores aut tempore, quos
+                    voluptates distinctio explicabo accusantium similique cum hic, quasi facere animi, temporibus dolor
+                    accusamus veritatis deserunt porro!
+                </p>
 
             </div>
         </div>
@@ -415,26 +447,6 @@
     </div>
 </section>
 
-		<section class="about" id="about">
-    <div class="container">
-        <div class="about-wrapper">
-            <div class="about-content">
-                <h2>О компании Артекс</h2>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim maiores aut tempore, quos
-                    voluptates distinctio explicabo accusantium similique cum hic, quasi facere animi, temporibus dolor
-                    accusamus veritatis deserunt porro!
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim maiores aut tempore, quos
-                    voluptates distinctio explicabo accusantium similique cum hic, quasi facere animi, temporibus dolor
-                    accusamus veritatis deserunt porro!
-                </p>
-
-            </div>
-        </div>
-    </div>
-</section>
-
 		<section class="form-main">
     <div class="container">
         <div class="form-intro">
@@ -513,34 +525,12 @@
 
                 </ul>
 
-                <ul class="contacts__content-list">
-
-                    <li class="contacts__content-item">
-                        <p>ИНН: 00000000000</p>
-                    </li>
-                    <li class="contacts__content-item">
-                        <p>ОГРНИП: 00000000000000</p>
-                    </li>
-
-                </ul>
 
                 <ul class="contacts__content-list">
 
                     <li class="contacts__content-item">
                         <a target="_blank" class="contacts__content-link" href="#!">
-                            Вопрос-ответ
-                        </a>
-                    </li>
 
-                    <li class="contacts__content-item">
-                        <a target="_blank" class="contacts__content-link" href="#!">
-                            Вакансии
-                        </a>
-                    </li>
-
-                    <li class="contacts__content-item">
-                        <a target="_blank" class="contacts__content-link" href="#!">
-                            Политика конфиденциальности
                         </a>
                     </li>
 
