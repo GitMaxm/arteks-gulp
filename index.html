@@ -7,9 +7,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Стартовый шаблон</title>
 	<link rel="stylesheet" href="./css/main.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
 </head>
 
 <body>
+
 	<header class="header">
     <div class="container">
         <div class="header__wrapper">
@@ -17,18 +20,23 @@
             <div class="header-top">
 
     <nav class="header-nav">
-        <ul>
-            <li><a href="index.html#about">О компании</a></li>
-            <li><a href="index.html#catalog">Товары</a></li>
-            <!-- <li><a href="#!">БЛОГ</a></li> -->
-            <li><a href="index.html#contacts">КОНТАКТЫ</a></li>
-        </ul>
-    </nav>
+    <ul>
+        <li><a href="#about">О компании</a></li>
+        <li><a href="#catalog">Товары</a></li>
+        <!-- <li><a href="#!">БЛОГ</a></li> -->
+        <li><a href="#contacts">КОНТАКТЫ</a></li>
+    </ul>
+
+    <button class="mobile-nav-btn">
+        <div class="nav-icon"></div>
+    </button>
+
+</nav>
 
     <div class="header-messenger">
         <p>Получите консультацию <br>онлайн</p>
 
-        <a href="https://wtsp.cc/79287700598">
+        <a target="_blank" href="https://wtsp.cc/79287700598">
             <img loading="lazy" src="./img/icons/whatsapp.svg" alt="">
         </a>
 
@@ -39,18 +47,64 @@
         <a class="phone__tel" href="tel:+79287700598">+7 (928) 770-05-98</a>
     </div>
 
-    <button class="button header-callback">
-        <a class="callback__link" href="#!">Заказать</a>
-    </button>
+    <a class="callback__link button header-callback" data-fancybox href="#hidden">Заказать</a>
 
-    <button class="mobile-nav-btn">
-        <div class="nav-icon"></div>
-    </button>
+    <div style="display: none;" id="hidden">
+        <div class="form-intro">
+            <h2 class="form-title">Заказать звонок</h2>
+            <p class="form-description">
+                Заполните форму ниже, и мы свяжемся с вами как можно скорее.
+            </p>
+        </div>
+
+        <form class="form-order" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+
+            <div class="form-group-container">
+                <div class="form-group">
+                    <label for="name" class="form-label">Введите ваше имя
+                        <span class="required">*</span>
+                    </label>
+                    <input id="name" name="name" class="form-input" placeholder="Алексей" type="text" required />
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email
+                        <span class="required">*</span>
+                    </label>
+                    <input id="email" name="email" class="form-input" placeholder="email@mail.ru" type="email"
+                        required />
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Телефон
+                        <span class="required">*</span>
+                    </label>
+                    <input id="phone" name="phone" class="form-input" placeholder="+7 (999) 216 153 99" type="text"
+                        required />
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Сообщение</label>
+                    <textarea class="form-textarea" id="message" name="message"
+                        placeholder="Напишите нам сообщение, если есть что добавить"></textarea>
+                </div>
+
+                <label class="checkbox">
+                    <input name="policy" required type="checkbox" class="checkbox__real" id="policy" />
+                    <div class="checkbox__text">
+                        С <a href="https://google.com" target="_blank">политикой конфеденциальности</a> ознакомлен
+                    </div>
+                </label>
+
+            </div>
+
+            <button id="submitForm" class="form-submit" type="submit">Send Message</button>
+        </form>
+    </div>
+
 </div>
 
             <div class="header-bot">
     <div class="logo">
-        <img id="logo" loading="lazy" src="./img/logo-day.png" alt="">
+        <img id="logo" loading="lazy" src="./img/logo-day.png" alt="Логотип компании Артекс">
         <p class="logo-label">
             Всё начинается с упаковки
         </p>
@@ -66,18 +120,10 @@
 
     </form> -->
 
-    <button class="dark-mode-btn dark-mode-btn__wrapper">
-        <img src="./img/icons/sun.svg" alt="Light mode" class="dark-mode-btn__icon">
-        <!-- <img src="./img/icons/moon.svg" alt="Dark mode" -->
-        <!-- class="dark-mode-btn__icon"> -->
-    </button>
 
 
 </div>
 
-            <button class="mobile-nav-btn">
-                <div class="nav-icon"></div>
-            </button>
         </div>
 
         <div class="header-content">
@@ -134,41 +180,46 @@
 </header>
 
 <div class="mobile-nav">
-	<ul class="mobile-nav__list">
-		<li><a href="#" class="active">Home</a></li>
-		<li><a href="#!">Services</a></li>
-		<li><a href="#!">About</a></li>
-		<li><a href="#!">Projects</a></li>
-		<li><a href="#!">Contact</a></li>
-	</ul>
-</div>
 
+	<ul class="mobile-nav__list">
+		<li><a href="#about">О компании</a></li>
+		<li><a href="#catalog">Товары</a></li>
+		<li><a href="#contacts">КОНТАКТЫ</a></li>
+
+		<li><a class="mobile-nav--close" href="#!"><img src="./img/icons/close.svg" alt="Кнопка закрытия окна меню"></a>
+		</li>
+
+	</ul>
+
+</div>
 
 	<main>
 		<section class="advantages">
     <div class="container">
         <div class="advantages__wrapper">
             <div class="advantages-block">
-                <img loading="lazy" class="advantages-img" src="./img/advantages/01.svg" alt="">
+                <img loading="lazy" class="advantages-img" src="./img/advantages/01.png" alt="">
 
-                <h3>Название преимущества</h3>
-                <p>Небольшое описание данного преимущества</p>
-
-            </div>
-
-            <div class="advantages-block">
-                <img loading="lazy" class="advantages-img" src="./img/advantages/02.svg" alt="">
-
-                <h3>Название преимущества</h3>
-                <p>Небольшое описание данного преимущества</p>
+                <h3>Быстрые сроки производства</h3>
+                <p>Оперативное изготовление заказов благодаря передовым технологиям и оптимизированным производственным
+                    процессам</p>
 
             </div>
 
             <div class="advantages-block">
-                <img loading="lazy" class="advantages-img" src="./img/advantages/03.svg" alt="">
+                <img loading="lazy" class="advantages-img" src="./img/advantages/02.png" alt="">
 
-                <h3>Название преимущества</h3>
-                <p>Небольшое описание данного преимущества</p>
+                <h3>Доставка</h3>
+                <p>Организуем быструю и надежную доставку по всей России</p>
+
+            </div>
+
+            <div class="advantages-block">
+                <img loading="lazy" class="advantages-img" src="./img/advantages/03.png" alt="">
+
+                <h3>Минимальная партия производства</h3>
+                <p>Готовы выполнить заказ любого объема, включая небольшие партии, удовлетворяя потребности каждого
+                    клиента</p>
 
             </div>
         </div>
@@ -181,13 +232,15 @@
             <div class="about-content">
                 <h2>О компании Артекс</h2>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim maiores aut tempore, quos
-                    voluptates distinctio explicabo accusantium similique cum hic, quasi facere animi, temporibus dolor
-                    accusamus veritatis deserunt porro!
+                <p>
+                    "Артекс" - ваш надежный партнер в производстве упаковочных материалов. Мы специализируемся на
+                    изготовлении высококачественной гофротары, ПНД-бутылок и ПЭТ-тары. Наша команда профессионалов
+                    создает упаковочные решения, идеально соответствующие потребностям каждого клиента.
                 </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam enim maiores aut tempore, quos
-                    voluptates distinctio explicabo accusantium similique cum hic, quasi facere animi, temporibus dolor
-                    accusamus veritatis deserunt porro!
+                <p>
+                    Мы гордимся тем, что производим тару по индивидуальным заказам, учитывая все ваши требования к
+                    размерам и характеристикам. Благодаря современному оборудованию и богатому опыту, "Артекс"
+                    гарантирует превосходное качество продукции и полное удовлетворение запросов наших заказчиков.
                 </p>
 
             </div>
@@ -206,21 +259,22 @@
                 <ul class="catalog-list">
                     <li class="catalog-item catalog-item--active" data-categories="item-1">Категория 1</li>
                     <li class="catalog-item" data-categories="item-2">Категория 2</li>
-                    <li class="catalog-item" data-categories="item-3">Категория 3</li>
-                    <li class="catalog-item" data-categories="item-4">Категория 4</li>
+                    <li class="catalog-item" data-categories="item-3">Стретч-пленка</li>
+                    <li class="catalog-item" data-categories="item-4">Комплектующие товары</li>
                 </ul>
             </nav>
 
             <div class="catalog-products">
                 <div id="item-1" class="catalog-product" data-product>
-                    <div class="catalog-content">
+                    <a class="catalog-product__link button" href="product.html">Подробнее</a>
 
+                    <div class="catalog-content">
 
                         <div class="catalog-content__blocks">
 
                             <div class="catalog-slider">
                                 <div class="swiper catalog-swiper">
-                                    <div class="swiper-wrapper catalog-wrapper">
+                                    <div class="swiper-wrapper product-wrapper">
                                         <div class="swiper-slide catalog-slide">
                                             <div class="catalog-content__block">
                                                 <img loading="lazy" src="./img/catalog/01.jpg" alt="">
@@ -296,11 +350,13 @@
                     </div>
                 </div>
                 <div id="item-2" class="catalog-product none" data-product>
+                    <a class="catalog-product__link button" href="product.html">Подробнее</a>
+
                     <div class="catalog-content">
                         <div class="catalog-content__blocks">
                             <div class="catalog-slider">
                                 <div class="swiper catalog-swiper">
-                                    <div class="swiper-wrapper catalog-wrapper">
+                                    <div class="swiper-wrapper product-wrapper">
                                         <div class="swiper-slide catalog-slide">
                                             <div class="catalog-content__block">
                                                 <img loading="lazy" src="./img/catalog/01.jpg" alt="">
@@ -345,11 +401,12 @@
                     </div>
                 </div>
                 <div id="item-3" class="catalog-product none" data-product>
+                    <a class="catalog-product__link button" href="product.html">Подробнее</a>
                     <div class="catalog-content">
                         <div class="catalog-content__blocks">
                             <div class="catalog-slider">
                                 <div class="swiper catalog-swiper">
-                                    <div class="swiper-wrapper catalog-wrapper">
+                                    <div class="swiper-wrapper product-wrapper">
                                         <div class="swiper-slide catalog-slide">
                                             <div class="catalog-content__block">
                                                 <img loading="lazy" src="./img/catalog/01.jpg" alt="">
@@ -393,13 +450,14 @@
                     </div>
                 </div>
                 <div id="item-4" class="catalog-product none" data-product>
+                    <a class="catalog-product__link button" href="product.html">Подробнее</a>
                     <div class="catalog-content">
 
                         <div class="catalog-content__blocks">
 
                             <div class="catalog-slider">
                                 <div class="swiper catalog-swiper">
-                                    <div class="swiper-wrapper catalog-wrapper">
+                                    <div class="swiper-wrapper product-wrapper">
                                         <div class="swiper-slide catalog-slide">
                                             <div class="catalog-content__block">
                                                 <img loading="lazy" src="./img/catalog/02.jpg" alt="">
@@ -461,47 +519,49 @@
             </p>
         </div>
 
-        <form class="form-order" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+        <div class="form-container">
+            <form class="form-order" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
 
-            <div class="form-group-container">
-                <div class="form-group">
-                    <label for="name" class="form-label">Введите ваше имя
-                        <span class="required">*</span>
-                    </label>
-                    <input id="name" name="name" class="form-input" placeholder="Алексей" type="text" required />
-                </div>
-                <div class="form-group">
-                    <label for="email" class="form-label">Email
-                        <span class="required">*</span>
-                    </label>
-                    <input id="email" name="email" class="form-input" placeholder="email@mail.ru" type="email"
-                        required />
-                </div>
-                <div class="form-group">
-                    <label for="phone" class="form-label">Телефон
-                        <span class="required">*</span>
-                    </label>
-                    <input id="phone" name="phone" class="form-input" placeholder="+7 (999) 216 153 99" type="text"
-                        required />
-                </div>
-                <div class="form-group">
-                    <label for="message" class="form-label">Сообщение</label>
-                    <textarea class="form-textarea" id="message" name="message"
-                        placeholder="Напишите нам сообщение, если есть что добавить"></textarea>
-                </div>
-
-                <label class="checkbox">
-                    <input name="policy" required type="checkbox" class="checkbox__real" id="policy" />
-                    <div class="checkbox__text">
-                        С <a href="https://google.com" target="_blank">политикой конфеденциальности</a> ознакомлен
+                <div class="form-group-container">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Введите ваше имя
+                            <span class="required">*</span>
+                        </label>
+                        <input id="name" name="name" class="form-input" placeholder="Алексей" type="text" required />
                     </div>
-                </label>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email
+                            <span class="required">*</span>
+                        </label>
+                        <input id="email" name="email" class="form-input" placeholder="email@mail.ru" type="email"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Телефон
+                            <span class="required">*</span>
+                        </label>
+                        <input id="phone" name="phone" class="form-input" placeholder="+7 (999) 216 153 99" type="text"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Сообщение</label>
+                        <textarea class="form-textarea" id="message" name="message"
+                            placeholder="Напишите нам сообщение, если есть что добавить"></textarea>
+                    </div>
 
-            </div>
+                    <label class="checkbox">
+                        <input name="policy" required type="checkbox" class="checkbox__real" id="policy" />
+                        <div class="checkbox__text">
+                            С <a href="https://google.com" target="_blank">политикой конфеденциальности</a> ознакомлен
+                        </div>
+                    </label>
 
-            <button id="submitForm" class="form-submit" type="submit">Send Message</button>
-        </form>
+                </div>
+
+                <button id="submitForm" class="form-submit" type="submit">Send Message</button>
+            </form>
+        </div>
     </div>
 </section>
 
@@ -514,37 +574,34 @@
 
             <div class="contacts__content">
 
-                <ul class="contacts__content-list">
+                <p>
+                    <b>Рабочий телефон:</b>
+                    <a class="contacts__content-tel" href="tel:+79287700598">+7 (928) 770-05-98</a>
+                </p>
 
-                    <li class="contacts__content-item">
-                        <a class="contacts__content-item" href="tel:+79990008585">+7 (999) 000-85-85</a>
-                    </li>
-                    <li class="contacts__content-item">
-                        <a class="contacts__content-item" href="#!">
-                            Ростовская область, г.Каменск-Шахтинский, ул. Профильная, 33
-                        </a>
-                    </li>
-                    <li class="contacts__content-item">
-                        <a class="contacts__content-item" href="mailto:arteks@mail.ru">arteks@mail.ru</a>
-                    </li>
+                <p class="contacts__content-address">
+                    <b>Наш адрес:</b>
+                    Ростовская область, г.Каменск-Шахтинский, <br> ул. Профильная, 33
+                </p>
 
-                </ul>
+                <p>
+                    <b>График работы:</b>
+                    Работаем без выходных <br>с 9:00 до 18:00
+                </p>
 
+                <p>
+                    <b>Почта:</b>
+                    <a class="contacts__content-email" href="mailto:arteks@mail.ru">arteks@mail.ru</a>
+                </p>
 
-                <ul class="contacts__content-list">
-
-                    <li class="contacts__content-item">
-                        <a target="_blank" class="contacts__content-link" href="#!">
-
-                        </a>
-                    </li>
-
-                </ul>
-
+                <a target="_blank" class="contacts__content-social" href="https://wtsp.cc/79287700598">
+                    <img loading="lazy" src="./img/icons/whatsapp.svg" alt="">
+                </a>
 
             </div>
 
-            <div class="contacts-map" id="map"> </div>
+            <div class="contacts-map" id="map"></div>
+
         </div>
     </div>
 
@@ -555,14 +612,16 @@
 	<footer class="footer">
 	<div class="container">
 		<div class="footer__wrappper">
-			<!-- <img loading="lazy" class="footer-logo" src="./img/logo.png" alt=""> -->
+			<img loading="lazy" class="footer-logo" src="./img/logo-day.png" alt="">
 			<p>© 2024. Артекс. Все права защищены</p>
 		</div>
 	</div>
 </footer>
+
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=a58693e5-1e8e-4308-8b3c-45bf0e2e603e&lang=ru_RU"
 		type="text/javascript"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 	<script src="./js/index.bundle.js"></script>
 
 </body>
