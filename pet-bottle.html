@@ -160,7 +160,7 @@
 
                     <div class="product__wrapper-line"></div>
 
-                    <ul class="product-list">
+                    <!-- <ul class="product-list">
                         <li class="product-list__item">
 
                             <div class="product-list__img">
@@ -208,8 +208,76 @@
                                 <p>Объем: 5 литров</p>
                             </div>
                         </li>
+                    </ul> -->
+
+                    <ul class="product-list" id="productList">
+                        <!-- Здесь будет динамически созданный список товаров -->
                     </ul>
 
+                    <script type="module">
+                        const catalogData = {
+                            "catalog": [
+                                {
+                                    "id": "item-2",
+                                    "link": "pet-bottle.html",
+                                    "items": [
+                                        {
+                                            "img": "./img/catalog/pet-bottle/01.jpg",
+                                            "title": "Бутылка",
+                                            "description": "Объем: 0,5 литров"
+                                        },
+                                        {
+                                            "img": "./img/catalog/pet-bottle/02.jpg",
+                                            "title": "Бутылка",
+                                            "description": "Объем: 0,5 литров"
+                                        },
+                                        {
+                                            "img": "./img/catalog/pet-bottle/03.jpg",
+                                            "title": "Бутылка",
+                                            "description": "Объем: 5 литров"
+                                        },
+                                        {
+                                            "img": "./img/catalog/pet-bottle/04.jpg",
+                                            "title": "Бутылка",
+                                            "description": "Объем: 2 литра"
+                                        },
+                                        {
+                                            "img": "./img/catalog/pet-bottle/05.jpg",
+                                            "title": "Бутылка",
+                                            "description": "Объем: 1,5 литров"
+                                        }
+                                    ]
+                                },
+                            ]
+                        };
+
+                        function createProductListMarkup() {
+                            const productList = document.getElementById('productList');
+                            const items = catalogData.catalog[0].items; // Доступ напрямую к items первой (и единственной) категории
+
+                            productList.innerHTML = ''; // Очистка списка перед добавлением новых элементов
+
+                            items.forEach(product => {
+                                const productItem = document.createElement('li');
+                                productItem.className = 'product-list__item';
+
+                                productItem.innerHTML = `
+                                    <div class="product-list__img">
+                                        <img loading="lazy" src="${product.img}" alt="${product.description}">
+                                    </div>
+                                    <div class="product-list__content">
+                                        <h4>${product.title}</h4>
+                                        <p>${product.description}</p>
+                                    </div>
+                                `;
+
+                                productList.appendChild(productItem);
+                            });
+                        }
+
+                        // Пример использования: создаем разметку для первой (и единственной) категории в catalogData
+                        createProductListMarkup();
+                    </script>
                 </div>
             </div>
         </section>
